@@ -1,0 +1,9 @@
+.home {
+  &__pokemon-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
