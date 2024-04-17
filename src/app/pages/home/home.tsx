@@ -1,5 +1,4 @@
 import { useEffect, useState, MouseEvent } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 import { ListPokemonsType } from 'src/app/types';
 
@@ -9,16 +8,20 @@ import { Pokemon } from '../../components/pokemon';
 import { useAdapterListWithId } from './hooks/useAdapterListWithId';
 
 import styles from './home.module.scss';
+import { Modal } from '../../components/modal';
+import { Actions } from './actions';
 
 export function Home() {
-  const navigate = useNavigate();
+  const [current, setCurrent] = useState(1);
   const [showDialog, setShowDialog] = useState(false);
+  const [imgUrl, setImgUrl] = useState<string | undefined>();
+
   const [pokemonList, setPokemonList] = useState<ListPokemonsType>();
   const pokemonListAdapted = useAdapterListWithId(pokemonList?.results || []);
 
-  const fetchPokemons = async () => {
+  const fetchPokemons = async (page = 0) => {
     try {
-      const data = await getPokemons();
+      const data = await getPokemons(page);
       setPokemonList(data);
     } catch (error) {
       console.error('Error fetching Pokémon list:', error);
@@ -30,13 +33,16 @@ export function Home() {
     setShowDialog(false);
   }
 
-  const handleDialog = (value:boolean) => {
+  const handleDialog = (value:boolean, imgUrl?: string) => {
     setShowDialog(value);
+    setImgUrl(imgUrl);
   }
 
-  const goToFavorites = () => {
-    navigate('/favorites');
-  }
+  const onChange = (page:number) => {
+    const offset = (page-1) * 20;
+    fetchPokemons(offset);
+    setCurrent(page);
+  };
 
   useEffect(() => {
     fetchPokemons();
@@ -45,12 +51,12 @@ export function Home() {
   return (
     <div className={styles.home}>
       {showDialog && (
-        <dialog open>
-          <h2>Dialog Content</h2>
-          <button onClick={handleClickCloseButton}>Close</button>
-        </dialog>
+        <Modal
+          imgUrl= {imgUrl} 
+          clickCloseButton={handleClickCloseButton}
+          />
       )}
-      <button onClick={goToFavorites}>Go favorites</button>
+      <Actions onChange={onChange} current={current}/>
       <div className={styles['home__pokemon-list']}>
         {pokemonListAdapted?.map(pokemon => (
           <Pokemon

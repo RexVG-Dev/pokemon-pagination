@@ -7,10 +7,11 @@ import { getPokemonDetails } from "../../api";
 import { PokemonType } from "src/app/types";
 
 import styles from './pokemon.module.scss';
+import { Tag } from "../tag";
 
 type PokemonComponentType = {
   id: string;
-  handleDialog: (value: boolean) => void;
+  handleDialog: (value: boolean, imgUrl?: string) => void;
 }
 
 export function Pokemon({
@@ -48,7 +49,7 @@ export function Pokemon({
   useEffect(() => {
     const handleClickTimeout = setTimeout(() => {
       if (clickCount === 1) {
-        handleDialog(true);
+        handleDialog(true, pokemon?.sprites.other?.dream_world?.front_default);
       } else if (clickCount === 2) {
         dispatch(addDetails(pokemon));
         handleDialog(false);
@@ -70,7 +71,26 @@ export function Pokemon({
       onClick={handleClicksCounter}
       className={styles.pokemon}
     >
-      <h1>{pokemon?.name}</h1>
+      <span
+        className={styles['pokemon__title']}
+      >
+        {pokemon?.name}
+      </span>
+      <div>
+        <img
+          className={styles['pokemon__img']}
+          src={
+            pokemon?.sprites.other?.dream_world?.front_default
+          }
+          alt={pokemon?.name}
+        />
+      </div>
+
+      <div className={styles['pokemon__tags']}>
+        {pokemon?.types.map(tag => (
+          <Tag type={tag.type.name}/>
+        ))}
+      </div>
     </div>
   )
 }

@@ -1,0 +1,29 @@
+.icon-button {
+  border-radius: 50%;
+  padding: 5px;
+  font-family: "Pokemon Solid", sans-serif;
+  cursor: pointer;
+
+  &__primary {
+    background-color: #CC0000;
+    color: #FFCA3A;
+  }
+
+  &__secondary {
+    background-color: #FFCA3A;
+    color: #CC0000;
+  }
+
+  &__large {
+    width: 50px;
+    height: 50px;
+  }
+  &__medium {
+    width: 30px;
+    height: 30px;
+  }
+  &__small {
+    width: 20px;
+    height: 20px;
+  }
+}

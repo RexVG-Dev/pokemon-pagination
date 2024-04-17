@@ -1,0 +1,98 @@
+.tag {
+  padding: 5px;
+  font-size: 10px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-shadow: none;
+  margin: 0 3px;
+  border-radius: 5px;
+
+  &__normal {
+    background: rgba(196, 196, 196, 0.8);
+    color: #333333;
+  }
+  
+  &__fighting {
+    background: rgba(176, 74, 58, 0.8);
+    color: #FFFFFF;
+  }
+  
+  &__flying {
+    background: rgba(122, 162, 247, 0.8);
+    color: #FFFFFF;
+  }
+  
+  &__poison {
+    background: rgba(135, 69, 148, 0.8);
+    color: #FFFFFF;
+  }
+  
+  &__ground {
+    background: rgba(215, 190, 118, 0.8);
+    color: #333333;
+  }
+  
+  &__rock {
+    background: rgba(163, 140, 33, 0.8);
+    color: #FFFFFF;
+  }
+  
+  &__bug {
+    background: rgba(109, 120, 21, 0.8);
+    color: #FFFFFF;
+  }
+  
+  &__ghost {
+    background: rgba(94, 78, 120, 0.8);
+    color: #FFFFFF;
+  }
+  
+  &__steel {
+    background: rgba(184, 184, 208, 0.8);
+    color: #333333;
+  }
+  
+  &__fire {
+    background: rgba(255, 172, 93, 0.8);
+    color: #333333;
+  }
+  
+  &__water {
+    background: rgba(100, 147, 235, 0.8);
+    color: #FFFFFF;
+  }
+  
+  &__grass {
+    background: rgba(114, 194, 53, 0.8);
+    color: #FFFFFF;
+  }
+  
+  &__electric {
+    background: rgba(247, 208, 44, 0.8);
+    color: #333333;
+  }
+  
+  &__psychic {
+    background: rgba(249, 85, 135, 0.8);
+    color: #FFFFFF;
+  }
+  
+  &__ice {
+    background: rgba(150, 217, 214, 0.8);
+    color: #333333;
+  }
+  
+  &__dragon {
+    background: rgba(94, 58, 39, 0.8);
+    color: #FFFFFF;
+  }
+  
+  &__dark {
+    background: rgba(110, 89, 72, 0.8);
+    color: #FFFFFF;
+  }
+  
+  &__fairy {
+    background: rgba(253, 185, 233, 0.8);
+    color: #333333;
+  }
+}

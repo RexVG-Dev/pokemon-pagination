@@ -1,8 +1,9 @@
 import {BASE_URL} from './constants';
 
 export async function getPokemons(offset = 0) {
+  const limit  = offset === 140 ? 11 : 20;
   try {
-    const response  = await fetch(`${BASE_URL}?offset=${offset}&limit=20`);
+    const response  = await fetch(`${BASE_URL}?offset=${offset}&limit=${limit}`);
 
     // TODO handle error cases (response fails)
 

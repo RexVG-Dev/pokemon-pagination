@@ -22,8 +22,9 @@ export type PokemonType  = {
   weight: number;
   id: number;
   sprites: SpritesType;
-  type: ClassType[];
+  types: ClassType[];
   abilities: AbilityType[];
+  stats: StatsType[];
 }
 
 type SpritesType = {
@@ -42,6 +43,15 @@ type AbilityType = {
     url: string;
   },
   slot: number;
+}
+
+type StatsType = {
+  base_stat: number;
+  effort: number;
+  stat: {
+    name: string;
+    url: string;
+  }
 }
 
 type ClassType = {

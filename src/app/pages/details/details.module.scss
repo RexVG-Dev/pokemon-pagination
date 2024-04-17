@@ -1,0 +1,77 @@
+.details {
+  width: 100%;
+  padding: 30px;
+
+  &__arrow {
+    width: 100%;
+  }
+
+  &__container {
+    max-width: 1100px;
+    margin: 30px auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__pokedex {
+    width: 50%;
+  }
+
+  &__info {
+    color: #000;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-shadow: none;
+    padding: 10px 5px;
+    width: 48%;
+    background: rgba(255,255,255, 0.3);
+    border-radius: 5px 25px;
+  }
+
+  &__name {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  &__data {
+    margin: 30px 0;
+
+    p {
+      margin-top: 10px;
+    }
+  }
+
+  &__stats {
+    margin-top: 20px;
+    padding: 10px;
+    background: rgba($color: #fff, $alpha: 0.6);
+    border-radius: 10px;
+  }
+
+  &__stats-title {
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  &__stat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  &__progress-bar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__bar {
+    width: 90%;
+  }
+
+  &__bar-value {
+    font-size: 12px;
+  }
+}

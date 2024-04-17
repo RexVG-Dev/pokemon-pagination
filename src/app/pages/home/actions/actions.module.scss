@@ -1,0 +1,17 @@
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 0 30px;
+
+  &__pagination {
+    text-shadow: none;
+    margin-bottom: 10px;
+  }
+}
+
+.rc-pagination-item-link {
+  color: #fff !important;
+}
