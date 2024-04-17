@@ -75,3 +75,22 @@
     font-size: 12px;
   }
 }
+
+@media (max-width: 720px) {
+  .details {
+    &__container {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 50px;
+    }
+
+    &__pokedex {
+      width: 75%;
+      margin-bottom: 30px;
+    }
+
+    &__info {
+      width: 100%;
+    }
+  }
+}
