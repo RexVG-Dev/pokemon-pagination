@@ -8,7 +8,7 @@ import { Button } from '../../components/button';
 
 import { Pokedex } from './pokedex';
 
-import backArrow from '../../../assets/icons/arrow.svg';
+import backArrow from '../../../assets/images/arrow-back.png';
 
 import styles from './details.module.scss';
 
@@ -43,7 +43,7 @@ export function Details() {
 
   return (
     <div className={styles.details}>
-      <IconButton size='medium' kind='primary' onClick={handleBackButton}>
+      <IconButton size='large' kind='primary' onClick={handleBackButton}>
         <img src={backArrow} alt="go to home icon" className={styles['details__arrow']}/>
       </IconButton>
       <div className={styles['details__container']}>

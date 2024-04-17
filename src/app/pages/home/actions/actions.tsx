@@ -30,7 +30,15 @@ export function Actions({
           }}
         />
       </div>
-      <Button onClick={goToFavorites} kind='secondary' size='large'> Go to your favorites pokemon</Button>
+      <Button
+        onClick={goToFavorites}
+        kind='secondary'
+        size='large'
+      >
+        <span className={styles['actions__title-button']}>
+          See your favorites pokemon
+        </span>
+      </Button>
     </div>
   )
 }

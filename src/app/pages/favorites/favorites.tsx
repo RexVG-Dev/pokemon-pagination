@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
 import { IconButton } from '../../components/icon-button';
 
-import backArrow from '../../../assets/icons/arrow.svg';
+import backArrow from '../../../assets/images/arrow-back.png';
 
 import styles from './favorites.module.scss';
 
